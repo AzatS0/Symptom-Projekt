@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Vorhersage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 2rem;
+        }
+        .container {
+            max-width: 600px;
+        }
+        .card {
+            padding: 2rem;
+            border-radius: .75rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+        .card-title {
+            font-weight: 500;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-control {
+            border-radius: .375rem;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: .375rem;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .alert-info {
+            border-left: 4px solid #007bff;
+        }
+        .form-text {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="card-title">Welche Erkrankung?</h1>
+            <p class="card-text text-center mb-4">Geben Sie Ihre Symptome ein, um mehr zu erfahren.</p>
+            <form method="POST" id="symptomForm">
+                {% csrf_token %}
+                <div class="form-group">
+                    <textarea name="user_input" id="user_input" rows="4" class="form-control" placeholder="Geben Sie Ihre Symptome hier ein..." required></textarea>
+                    <small class="form-text">Beschreiben Sie die Symptome, die Sie erleben.</small>
+                </div>
+                <button type="submit" class="btn btn-custom" id="submitBtn">Krankheit erkennen</button>
+            </form>
+
+            {% if prediction %}
+                <div class="alert alert-info mt-4" role="alert">
+                    <h4 class="alert-heading">Krankheit:</h4>
+                    <p>{{ prediction }}</p>
+                    <p> Diese Analyse stellt keine ärztliche Diagnose dar und ersetzt keinen Arztbesuch. Sie dient ausschließlich zu Demonstrationszwecken im Rahmen eines AI-Projekts. Für eine genaue Diagnose konsultieren Sie bitte einen Facharzt.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Funktion, die den Button klickt, wenn die Enter-Taste gedrückt wird
+        document.getElementById('user_input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Verhindert das Standardverhalten von Enter (z.B. Zeilenumbruch)
+                document.getElementById('submitBtn').click(); // Klickt auf den Submit-Button
+            }
+        });
+    </script>
+</body>
+</html>
