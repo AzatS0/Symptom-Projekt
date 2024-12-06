@@ -23,13 +23,19 @@ Navigieren Sie in das Verzeichnis des geklonten Projekts:
 cd Symptom
 ```
 
-### 3. Starten Sie den Django-Server
+### 3. Installieren Sie die Abhängigkeiten
+Falls noch nicht geschehen, installieren Sie alle erforderlichen Bibliotheken und Abhängigkeiten:
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Starten Sie den Django-Server
 Führen Sie den folgenden Befehl aus, um den Django-Server zu starten:
 ```bash
 python manage.py runserver
 ```
 
-### 4. Zugriff auf die Anwendung
+### 5. Zugriff auf die Anwendung
 Öffnen Sie Ihren Browser und gehen Sie zu:
 ```bash
 http://127.0.0.1:8000
