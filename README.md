@@ -14,7 +14,7 @@ Dieses Projekt dient zu Demonstrationszwecken und ist nicht dazu gedacht, eine p
 ### 1. Klonen Sie das Repository
 Klonen Sie das Projekt von GitHub auf Ihren lokalen Rechner:
 ```bash
-git clone https://github.com/IhrBenutzername/symptom.git
+https://github.com/AzatS0/Symptom-Projekt.git
 ```
 
 ### 2. Wechseln Sie in das Projektverzeichnis
