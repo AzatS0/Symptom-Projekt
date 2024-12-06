@@ -13,17 +13,25 @@ Dieses Projekt dient zu Demonstrationszwecken und ist nicht dazu gedacht, eine p
 
 ### 1. Klonen Sie das Repository
 Klonen Sie das Projekt von GitHub auf Ihren lokalen Rechner:
-
+```bash
 git clone https://github.com/IhrBenutzername/symptom.git
+```
 
 ### 2. Wechseln Sie in das Projektverzeichnis
 Navigieren Sie in das Verzeichnis des geklonten Projekts:
+```bash
 cd Symptom
+```
 
 ### 3. Starten Sie den Django-Server
 Führen Sie den folgenden Befehl aus, um den Django-Server zu starten:
+```bash
 python manage.py runserver
+```
 
 ### 4. Zugriff auf die Anwendung
 Öffnen Sie Ihren Browser und gehen Sie zu:
+```bash
 http://127.0.0.1:8000
+```
+
