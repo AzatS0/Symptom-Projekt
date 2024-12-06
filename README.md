@@ -20,7 +20,7 @@ https://github.com/AzatS0/Symptom-Projekt.git
 ### 2. Wechseln Sie in das Projektverzeichnis
 Navigieren Sie in das Verzeichnis des geklonten Projekts:
 ```bash
-cd Symptom
+cd Symptom-Projekt\Symptom
 ```
 
 ### 3. Installieren Sie die Abhängigkeiten
